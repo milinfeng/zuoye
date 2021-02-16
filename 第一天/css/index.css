@@ -1,0 +1,163 @@
+@media screen and (max-width: 320px) {
+  html {
+    font-size: 32px !important;
+  }
+}
+/* 如果屏幕尺寸超过了750px，则将html的字体限制在750尺寸的字体大小 */
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 75px !important;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #666;
+}
+img {
+  vertical-align: middle;
+  border: none;
+}
+input {
+  border: none;
+  outline: none;
+}
+
+li {
+  list-style: none;
+}
+i {
+  font-style: normal;
+}
+strong {
+  font-weight: 400;
+}
+body {
+  margin: 0 auto;
+  min-width: 350px;
+  width: 10rem;
+  line-height: 1.5;
+  font-family: arial, helvetica;
+  font-size: 0.32rem;
+  background-color: #fff;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 头部区域 */
+#header {
+  position: relative;
+  overflow: hidden;
+  background-color: rgba(255, 114, 0);
+  height: 3.669rem;
+  text-align: center;
+}
+
+#header p {
+  position: absolute;
+  left: 2.52rem;
+  top: 1.66rem;
+  font-size: 0.48rem;
+  color: #fff;
+}
+.sbar {
+  width: 90%;
+  height: 0.241rem;
+}
+
+.avatar {
+  position: absolute;
+  width: 1.223rem;
+  height: 1.223rem;
+  left: 1.063rem;
+  top: 1.302rem;
+  border-radius: 50%;
+}
+
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+.avatar p {
+  position: absolute;
+  left: 1.604rem;
+  top: 0.302rem;
+  font-size: 0.365rem;
+  color: #fff;
+}
+.logo {
+  position: absolute;
+  left: 0.92rem;
+  width: 8.547rem;
+  height: 4.56rem;
+}
+
+/* <!-- 优惠券模块 --> */
+.coupons {
+  height: 2.602rem;
+}
+
+.coupons img {
+  width: 100%;
+}
+
+/* <!-- 我的家 --> */
+#home {
+  margin-top: 0.001rem;
+}
+
+#home img {
+  width: 100%;
+}
+
+
+/* 咨询 */
+.advisory {
+  height: 3.304rem;
+  padding: 0 0.391rem;
+}
+.advisory ul {
+  display: flex;
+}
+.advisory li {
+  flex: 1;
+}
+
+.advisory li:first-child {
+  margin-right: 02.52rem;
+}
+
+.advisory li img {
+  width: 100%;
+}
+
+
+/* 底部模块 */
+.footer {
+  height: 1.302rem;
+  display: flex;
+  /* //项目位于各行之前、之间、之后都留有空白的容器内 */
+  justify-content: space-around;
+  align-items: center;
+  color: #ccc;
+}
+
+.footer a {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  color: #ccc;
+}
+.footer a img {
+  width: 0.6rem;
+  height: 0.6rem;
+}
+.footer a:first-child p {
+  color: #ff7200;
+}
