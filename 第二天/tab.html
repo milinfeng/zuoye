@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        #box {
+            width: 500px;
+        }
+
+        ol {
+            width: 500px;
+            height: 60px;
+        }
+
+        ol li {
+            float: left;
+            width: 100px;
+            height: 60px;
+            box-sizing: border-box;
+            border: 1px solid #f00;
+        }
+
+
+        ul li {
+            width: 500px;
+            height: 300px;
+            box-sizing: border-box;
+            border: 1px solid #d45dfd;
+        }
+
+        .current {
+            background-color: #f66;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ol>
+            <li class="current">1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ol>
+        <ul>
+            <li>内容1</li>
+            <li style="display: none;">内容2</li>
+            <li style="display: none;">内容3</li>
+            <li style="display: none;">内容4</li>
+            <li style="display: none;">内容5</li>
+        </ul>
+    </div>
+
+
+    <script>
+        const olLis = document.querySelectorAll('ol li')
+        const ulLis = document.querySelectorAll('ul li')
+        const boxs = document.querySelector('#box')
+        let index = 0
+
+        for (let i = 0; i < olLis.length; i++) {
+            olLis[i].index = i
+            olLis[i].onclick = function () {
+                index = this.index
+                for (let j = 0; j < olLis.length; j++) {
+                    olLis[j].className = ''
+                    ulLis[j].style.display = 'none'
+                }
+                this.className = 'current'
+                ulLis[this.index].style.display = 'block'
+            }
+        }
+
+        //定时器效果
+        let timer = setInterval(function () {
+            if (index === 5) index = 0
+            olLis[index].click()
+            index++
+        }, 1000)
+
+        boxs.onmouseenter = function () {
+            clearInterval(timer)
+        }
+
+        boxs.onmouseleave = function () {
+            timer = setInterval(function () {
+                if (index === 5) index = 0
+                olLis[index].click()
+                index++
+            }, 1000)
+        }
+    </script>
+</body>
+
+</html>
