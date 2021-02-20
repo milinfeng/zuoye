@@ -22,7 +22,6 @@
 <body>
     <div id="app">
         <my-table :goodlist="goodlist">
-            <!-- #6 库存量 颜色设置 -->
             <template slot-scope="scope">
                 <div v-if="scope.row.stock_quantity<20" style="background-color: red">{{scope.row.stock_quantity}}</div>
                 <div v-else-if="scope.row.stock_quantity<100" style="background-color: orange">
@@ -31,7 +30,6 @@
             </template>
         </my-table>
     </div>
-    <!-- #3 my-table结构 -->
     <template id="myTable">
         <table>
             <thead>
@@ -58,7 +56,6 @@
                     <td>{{item.zhaiyao}}</td>
                     <td>{{item.market_price}}</td>
                     <td>{{item.sell_price}}</td>
-                    <!-- #5 作⽤域插槽 -->
                     <td>
                         <slot :row="item">{{item.stock_quantity}}</slot>
                     </td>
@@ -72,7 +69,6 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.bootcdn.net/ajax/libs/vue-router/3.4.8/vue-router.js"></script>
     <script>
-        // #7 过滤器
         Vue.filter('dateFormat', function (date) {
             const dt = new Date(date)
 
@@ -82,7 +78,6 @@
 
             return y + '-' + m + '-' + d
         })
-        // #2 组件my-table，
         const MyTable = {
             props: ['goodlist'],
             data() {
@@ -91,13 +86,11 @@
             methods: {},
             template: '#myTable'
         }
-        // vue 实例对象
         const vm = new Vue({
             el: '#app',
             data: {
                 goodlist: []
             },
-            // #1 获取商品列表信息
             created() {
                 this.getGoodlist()
             },
